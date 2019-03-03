@@ -1,16 +1,7 @@
-## 后端搭配 mall-fe-api 使用
+[![Build Status](https://travis-ci.com/ximing/playground.svg?branch=master)](https://travis-ci.com/ximing/playground)
 
-## 开发
-```bash
-# 本项目
-npm run dev
+### About
 
-# mall-fe-api
-npm run dev
-# 然后访问localhost:8080
-```
+博客 [www.ximing.ren](https://www.ximing.ren) 相关demo
 
-## build
-```bash
-npm run build
-```
+使用微服务架构
