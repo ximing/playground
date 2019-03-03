@@ -1,5 +1,6 @@
 #!/bin/bash
 cd dist
+ls
 git init
 git add .
 dateAndMonth=`date "+%b %Y"`
