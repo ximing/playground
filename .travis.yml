@@ -1,0 +1,17 @@
+language: node_js
+cache: node_modules
+node_js:
+  - '10'
+before_install:
+  - curl -H "Content-Type:application/json" -X POST -d '{"token":"'"$DX_TOKEN"'", "text":"[playground] travis build start","id":"64011782718"}' https://mall.meituan.com/wx/service/dx/sendToGroup
+  - git config --global user.name "席铭"
+  - git config --global user.email "807754634@qq.com"
+install:
+  - npm install --registry=https://registry.npmjs.org
+script:
+  - rm -rf dist
+  - npm run build:all
+  - npm run copy
+after_success:
+  - bash ./build/deploy.sh
+cache: npm

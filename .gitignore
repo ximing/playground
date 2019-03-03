@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+.idea/*
+dist
+dest
+.vscode/
+npm-debug.log
+report-results.html
+.nyc_output
+.lslogrc
+*.log
+.changeMockrc
+test.js
