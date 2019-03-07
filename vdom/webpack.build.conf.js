@@ -21,7 +21,7 @@ module.exports = webpackMmerge(common, {
     output: {
         library: '[name]',
         libraryTarget: 'amd',
-        path: path.resolve(__dirname, '../dist/react'),
+        path: path.resolve(__dirname, '../dist/vdom'),
         filename: '[name].[hash].js',
         publicPath: `/react/`
     },
