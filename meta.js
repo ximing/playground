@@ -14,6 +14,10 @@ export default function(env) {
                 'react-demo': {
                     manifest: 'http://localhost:7905/demo.js',
                     activeRoute: '/react/demo*'
+                },
+                'vdom': {
+                    manifest: 'http://localhost:7801/vdom.js',
+                    activeRoute: '/vdom*'
                 }
             }
         });

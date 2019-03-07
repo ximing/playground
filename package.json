@@ -9,8 +9,10 @@
     "dev": "NODE_ENV=development webpack-dev-server --config webpack.dev.conf.js --inline --hot",
     "build": "NODE_ENV=production webpack --config webpack.build.conf.js",
     "build:react": "cd react && NODE_ENV=production webpack --config webpack.build.conf.js",
+    "build:vdom": "cd vdom && NODE_ENV=production webpack --config webpack.build.conf.js",
     "dev:react": "cd react && NODE_ENV=development webpack-dev-server --config webpack.dev.conf.js --inline --hot",
-    "build:all": "npm run build && npm run build:react"
+    "dev:vdom": "cd vdom && NODE_ENV=development webpack-dev-server --config webpack.dev.conf.js --inline --hot",
+    "build:all": "npm run build && npm run build:react && npm run build:vdom"
   },
   "keywords": [],
   "author": "",
@@ -123,6 +125,7 @@
     "select-row-col": "^1.0.5",
     "single-spa": "^4.0.3",
     "single-spa-react": "^2.9.0",
+    "snabbdom": "^0.7.3",
     "sofe": "^2.1.4",
     "systemjs": "0.20.19",
     "tinycolor2": "^1.4.1"
