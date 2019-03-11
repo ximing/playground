@@ -5,14 +5,14 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMmerge = require('webpack-merge');
-const common = require('./webpack.common.config');
+const common = require('../webpack.common.config');
 
-const port = 7800;
+const port = 7801;
 
 module.exports = webpackMmerge(common, {
     mode: 'development', // "production" | "development" | "none"
     entry: {
-        boot: [ './boot.js']
+        vdom: ['./src/index.js'],
     },
     optimization: {
         removeAvailableModules: false,
@@ -21,8 +21,8 @@ module.exports = webpackMmerge(common, {
     },
     output: {
         filename: '[name].js',
-        // library: 'config',
-        // libraryTarget: 'amd',
+        library: 'config',
+        libraryTarget: 'amd',
         path: path.resolve(__dirname, 'dist'),
         publicPath: `http://127.0.0.1:${port}/`
     },
@@ -68,10 +68,15 @@ module.exports = webpackMmerge(common, {
             'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
         }
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            chunksSortMode: 'none'
-        })
+    plugins: [],
+    externals: [
+        /^lodash$/,
+        /^jquery$/,
+        /^single-spa$/,
+        /^react$/,
+        /^react\/lib.*/,
+        /^react-dom$/,
+        /.*react-dom.*/,
+        /^rxjs\/?.*$/
     ]
 });
