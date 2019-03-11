@@ -15,3 +15,10 @@ glob(`${process.cwd()}/dist/**/manifest.json`, { nodir: true }, async (err, file
         }
     });
 });
+glob(`${process.cwd()}/static/**/*`, { nodir: true }, async (err, files) => {
+    if (err) throw err;
+    console.log(files);
+    files.forEach((f) => {
+        fs.copySync(f, f.replace(`${process.cwd()}/static/`, `${process.cwd()}/dist/`));
+    });
+});
