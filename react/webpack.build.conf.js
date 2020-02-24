@@ -5,9 +5,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMmerge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const common = require('../webpack.common.config');
 

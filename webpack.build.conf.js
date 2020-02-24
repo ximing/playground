@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMmerge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const common = require('./webpack.common.config');
 
@@ -53,7 +53,7 @@ module.exports = webpackMmerge(common, {
     target: 'web',
     stats: 'errors-only', // lets you precisely control what bundle information gets displayed
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './index.html',
             chunksSortMode: 'none'
